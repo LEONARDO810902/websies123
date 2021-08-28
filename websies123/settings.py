@@ -89,11 +89,8 @@ WSGI_APPLICATION = 'websies123.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-<<<<<<< HEAD
         'NAME': 'mydatabase',
-=======
-         'NAME': 'mydatabase',
->>>>>>> 3f177c9b15855ff2783c29ba38ad116dc1f2b655
+
     }
 }
 
