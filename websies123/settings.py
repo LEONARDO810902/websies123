@@ -88,12 +88,8 @@ WSGI_APPLICATION = 'websies123.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'websies123',
-        'USER': 'root',
-        'PASSWORD': 'M4g4lly740902+',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 
