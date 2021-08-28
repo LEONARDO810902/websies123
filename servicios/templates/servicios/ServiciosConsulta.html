@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+
+{% block content %}
+
+{% include 'servicios/busqueda.html'%}
+
+<div class="container">
+
+    <table class="table table-bordered table-hover table-striped border-primary">
+        <thead class="table-dark">
+            <tr class="tex">
+                <td>GRADO</td>
+                <td>APELLIDOS</td>
+                <td>NOMBRES</td>
+                <td>CELULAR</td>
+                <td>SERVICIOS</td>
+                <td>FECHA</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if object_list %}
+            {% for ServiciosModel in object_list %}
+            <tr>
+                <td>{{ServiciosModel.grado}}</td>
+                <td>{{ServiciosModel.apellidos | upper}}</td>
+                <td>{{ServiciosModel.nombres | upper}}</td>
+                <td>{{ServiciosModel.celular}}</td>
+                <td>{{ServiciosModel.servicios | upper}}</td>
+                <td>{{ServiciosModel.fecha | date:"d/m/Y"}}</td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay registros en la base </h1>
+
+            {% endif%}
+        </tbody>
+
+    </table>
+
+
+    {% endblock %}
+
+</div>

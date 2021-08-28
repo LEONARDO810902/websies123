@@ -1,0 +1,19 @@
+
+.bodybase{
+  background-color: rgb(171, 196, 171);
+}
+
+.bodyservicios{
+    background-color: rgb(167, 67, 153);
+  }
+
+.centrado{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conprincipal{
+  margin: auto;
+  padding: 1px;
+}

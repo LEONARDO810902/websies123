@@ -1,0 +1,40 @@
+{% extends 'core/base.html'%}
+
+{% block title %} Extenciones {% endblock %}
+
+{% block content %}
+
+<container>
+
+    <form method="post" class="mt-2" autocomplete="off">
+
+        {% csrf_token %}
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-5 mb-3">
+                    <div class="form-group">
+                        <label for="{{ form.extension.name}}">{{ form.extension.label}}</label>
+                        {{form.extension}}
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-5 ">
+                    <button class="btn btn-primary col-md-8" type="submit">Guardar</button>
+                </div>
+                <div class="col-5">
+                    <a class="btn btn-success col-md-8" href="{% url 'ext_nuevo' %}">Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+</container>
+
+{% endblock %}

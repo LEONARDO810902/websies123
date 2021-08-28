@@ -1,0 +1,111 @@
+{% extends 'core/base.html' %}
+
+{% block title %} servicios {% endblock %}
+
+
+{% block content %}
+
+<div class="">
+
+    <div class="container">
+
+        <form method="post" class="mt-2" autocomplete="off">
+
+            {% csrf_token %}
+
+            <div class="container">
+
+                <div class="row centrado">
+                    <div class="col-2">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.grado.name}}">{{ form.grado.label}}</label>
+                                {{form.grado}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-5">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.apellidos.name}}">{{ form.apellidos.label}}</label>
+                                {{form.apellidos}}
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-5">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.nombres.name}}">{{ form.nombres.label}}</label>
+                                {{form.nombres}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.servicios.name}}">{{ form.servicios.label}}</label>
+                                {{form.servicios}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="row centrado">
+                <div class="col-4">
+                    <div class="form-control">
+                        <div class="form-group">
+                            <label for="{{ form.celular.name}}">{{ form.celular.label}}</label>
+                            {{form.celular}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-control">
+                        <div class="form-group">
+                            <label for="{{ form.fecha.name}}">{{ form.fecha.label}}</label>
+                            {{form.fecha}}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-control">
+                        <div class="form-group">
+                            <label for="{{ form.fechaNotificacion.name}}">{{ form.fechaNotificacion.label}}</label>
+                            {{form.fechaNotificacion}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-5">
+                    <button class="btn btn-primary col-md-8" type="submit">Guardar</button>
+                </div>
+                <div class="col-5">
+                    <a class="btn btn-success col-md-8" href="{% url 'Ser_listado' %}">Cancelar</a>
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

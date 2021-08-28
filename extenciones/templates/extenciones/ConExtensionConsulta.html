@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+{% block content %}
+
+´<style>
+    .trheader {
+        text-align: center;
+    }
+</style>
+´
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 search">
+            <form method="GET">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar solo columna de EXTENSION"
+                            name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="btn btn-success">Buscar</button>
+
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped border-primary table-condensed">
+        <thead class="table-dark">
+            <tr class="tex trheader">
+                <td>No.</td>
+                <td>GRADO</td>
+                <td>APELLIDOS</td>
+                <td>NOMBRE</td>
+                <td>SIGLA</td>
+                <td>EXTENSION</td>
+                <td>ESTADO</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if object_list %}
+            {% for DirExtencion in object_list %}
+            <tr>
+                <td>{{DirExtencion.id}}</td>
+                <td>{{DirExtencion.grado}}</td>
+                <td>{{DirExtencion.apellidos}}</td>
+                <td>{{DirExtencion.nombre}}</td>
+                <td>{{DirExtencion.sigla}}</td>
+                <td>{{DirExtencion.extension}}</td>
+                <td>{{DirExtencion.estado}}</td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay registros en la base </h1>
+
+            {% endif%}
+        </tbody>
+
+    </table>
+</div>
+
+
+{% endblock %}

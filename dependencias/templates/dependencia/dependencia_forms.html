@@ -1,0 +1,93 @@
+{% extends 'core/base.html'%}
+
+{% block title %} dep_agregar {% endblock %}
+
+{% block content %}
+
+<container>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.dependencia.name}}">{{ form.dependencia.label}}</label>
+                        {{form.dependencia}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.unidad.name}}">{{ form.unidad.label}}</label>
+                        {{form.unidad}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.telefono.name}}">{{ form.telefono.label}}</label>
+                        {{form.telefono}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.celular.name}}">{{ form.celular.label}}</label>
+                        {{form.celular}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.email.name}}">{{ form.email.label}}</label>
+                        {{form.email}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.direccion.name}}">{{ form.direccion.label}}</label>
+                        {{form.direccion}}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.municipio.name}}">{{ form.municipio.label}}</label>
+                        {{form.municipio}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-5 ">
+                    <button class="btn btn-primary col-md-8" type="submit">Guardar</button>
+                </div>
+                <div class="col-5">
+                    <a class="btn btn-success col-md-8" href="{% url 'dep_listado' %}">Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</container>
+
+{% endblock %}

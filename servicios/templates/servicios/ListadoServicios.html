@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+
+{% block content %}
+
+{% include 'servicios/busqueda.html'%}
+
+<table class="table table-bordered table-hover table-striped border-primary">
+    <thead class="table-dark">
+        <tr class="tex">
+            <td>No.</td>
+            <td>GRADO</td>
+            <td>APELLIDOS</td>
+            <td>NOMBRES</td>
+            <td>CELULAR</td>
+            <td>SERVICIOS</td>
+            <td>FECHA</td>
+            <td>FECHANO</td>
+            <td>ACCIONES</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for ServiciosModel in object_list %}
+        <tr>
+            <td>{{ServiciosModel.id}}</td>
+            <td>{{ServiciosModel.grado}}</td>
+            <td>{{ServiciosModel.apellidos }}</td>
+            <td>{{ServiciosModel.nombres}}</td>
+            <td>{{ServiciosModel.celular}}</td>
+            <td>{{ServiciosModel.servicios}}</td>
+            <td>{{ServiciosModel.fecha | date:"d/m/Y"}}</td>
+            <td>{{ServiciosModel.fechaNotificacion | date:"d/m/Y"}}</td>
+            <td>
+                <a class="btn btn-primary  btn-sm" href="{% url 'Ser_editar' ServiciosModel.id %}">Editar</a>
+                <a class="btn btn-danger  btn-sm" href="">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros en la base </h1>
+
+        {% endif%}
+    </tbody>
+
+</table>
+
+
+{% endblock %}

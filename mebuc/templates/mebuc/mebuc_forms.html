@@ -1,0 +1,76 @@
+{% extends 'core/base.html'%}
+
+{% block title %} AGREGAR {% endblock %}
+
+{% block content %}
+
+<container>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.dependencia.name}}">{{ form.dependencia.label}}</label>
+                        {{form.dependencia}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.cai.name}}">{{ form.cai.label}}</label>
+                        {{form.cai}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.cuadrante.name}}">{{ form.cuadrante.label}}</label>
+                        {{form.cuadrante}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.patrulla.name}}">{{ form.patrulla.label}}</label>
+                        {{form.patrulla}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.telefono.name}}">{{ form.telefono.label}}</label>
+                        {{form.telefono}}
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-2">
+                    <div class="form-group">
+                        <label for="{{ form.celular.name}}">{{ form.celular.label}}</label>
+                        {{form.celular}}
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <a class="btn btn-success" href="{% url 'listado' %}">Cancelar</a>
+        </div>
+
+
+    </form>
+</container>
+
+{% endblock %}

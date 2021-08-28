@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+{% block content %}
+
+
+{% include 'mebuc/busqueda.html'%}
+
+<table class="table table-bordered table-hover table-striped border-primary">
+    <thead class="table-dark">
+        <tr>
+            <td>No.</td>
+            <td>DEPENDENCIA</td>
+            <td>CAI</td>
+            <td>CUADRANTE</td>
+            <td>PATRULLA</td>
+            <td>TELEFONO</td>
+            <td>CELULAR</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for Directoriomebuc in object_list %}
+        <tr>
+            <td>{{Directoriomebuc.id}}</td>
+            <td>{{Directoriomebuc.dependencia}}</td>
+            <td>{{Directoriomebuc.cai}}.</td>
+            <td>{{Directoriomebuc.cuadrante}}</td>
+            <td>{{Directoriomebuc.patrulla}}</td>
+            <td>{{Directoriomebuc.telefono}}</td>
+            <td>{{Directoriomebuc.celular}}</td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros en la base </h1>
+
+        {% endif%}
+    </tbody>
+
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'core/base.html'%}
+
+{% block title %} Registro {% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6">
+        <a class="btn btn-primary col-4 btn-sm ml-auto" href="{% url 'home'%}">Salir</a>
+    </div>
+
+</div>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr class="tex">
+            <td>No.</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Usuario</td>
+            <td>Correo</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for User in object_list %}
+        <tr>
+            <td>{{User.id}}</td>
+            <td>{{User.first_name}}</td>
+            <td>{{User.last_name}}</td>
+            <td>{{User.username}}</td>
+            <td>{{User.email}}</td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros en la base </h1>
+
+        {% endif%}
+    </tbody>
+
+</table>
+
+{% endblock %}

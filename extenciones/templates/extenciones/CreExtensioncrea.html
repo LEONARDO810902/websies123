@@ -1,0 +1,137 @@
+{% extends 'core/base.html' %}
+
+{% block title %} servicios {% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="">
+
+    <div class="container conprincipal ">
+
+        <form method="post" class="mt-4" autocomplete="off">
+
+            {% csrf_token %}
+
+            <div class="container ">
+
+                <div class="row centrado">
+                    <div class="col-2">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.extension.name}}">{{ form.extension.label}}</label>
+                                {{form.extension}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-2">
+                        <div>
+                            <div class="form-group">
+                                <a class="btn btn-success btn-lg" href="{% url 'ext_extcrear' %}">Crear</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <!-- grado-->
+                        <label for="grado" class="control-label">GRADO</label>
+                        <input type="text" class="form-control" id="grado" name="grado" v-model="grado">
+                    </div>
+
+
+
+                    <div class="col-3">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.cedula.name}}">{{ form.cedula.label}}</label>
+                                {{form.cedula}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+
+                <div class="row centrado">
+
+                    <div class="col-5">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.apellidos.name}}">{{ form.apellidos.label}}</label>
+                                {{form.apellidos}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.nombre.name}}">{{ form.nombre.label}}</label>
+                                {{form.nombre}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <br>
+
+                <div class="row centrado ">
+                    <div class="col-3">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.sigla.name}}">{{ form.sigla.label}}</label>
+                                {{form.sigla}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.estado.name}}">{{ form.estado.label}}</label>
+                                {{form.estado}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="form-control">
+                            <div class="form-group">
+                                <label for="{{ form.pin.name}}">{{ form.pin.label}}</label>
+                                {{form.pin}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row centrado ">
+                <div class="col-5 ">
+                    <button class="btn btn-primary btn-large col-md-8" type="submit">Guardar</button>
+                </div>
+                <div class="col-5">
+                    <a class="btn btn-success btn-large col-md-8" href="{% url 'ext_listado' %}">Cancelar</a>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <br>
+
+
+
+</div>
+</div>
+
+
+{% endblock %}

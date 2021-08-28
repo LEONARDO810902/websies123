@@ -1,0 +1,115 @@
+<container>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">SIES123 - MEBUC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'Ser_listado_home' %}">SERVICIOS</a>
+                    </li>
+                    <!--Navegacion de MEBUC -->
+
+                    <li class="nav-item dropdown  ">
+                        <a class="nav-link active dropdown-toggle " href="#" id="navbar" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            MEBUC
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbar">
+                            <li><a class="dropdown-item" href="{% url 'mebuc_consulta' %}">ConsultaDirectorio</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'dep_consulta' %}">ConsultaDependencias</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'ext_consulta' %}">ConsultaExtensiones</a></li>
+                        </ul>
+
+                    </li>
+
+                    <!--Navegacion de DESAN -->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  dropdown-toggle disabled" href="#" id="navbar" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            DESAN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbar">
+                            <li><a class="dropdown-item" href="">ConsultaDirectorio</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Dependencias</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href=""></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href=""></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href=""></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href=""></a>
+                    </li>
+
+                    <!--Navegacion de Administracion -->
+
+                    {% if user.is_authenticated %}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbar" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Administracion
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbar">
+                            <li><a class="dropdown-item" href="{% url 'nuevo' %}">DirectorioAgregar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'listado' %}">DirectorioConsulta</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'dep_listado' %}">DependenciaAgregar</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="{% url 'ext_listado' %}">Extensiones</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ext_nuevo' %}">AgregarExtensiones</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'Ser_listado' %}">Servicios</a></li>
+                            <li><a class="dropdown-item" href="{% url 'Ser_nuevo' %}">NuevoServicios</a></li>
+
+                        </ul>
+                    </li>
+
+                    {% endif %}
+
+                    <!--Navegacion de Usuario -->
+
+                    <li class="nav-item dropdown ">
+                        <a class=" nav-link active dropdown-toggle" href="#" id="navbar" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Usuarios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbar">
+                            <li><a class="dropdown-item" href="{% url 'login'%}">Login</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'logout'%}">Cerrar</a></li>
+                        </ul>
+                    </li>
+
+            </div>
+        </div>
+    </nav>
+</container>

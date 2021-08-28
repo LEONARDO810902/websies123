@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+{% block content %}
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 search">
+            <form method="GET">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Buscar solo columna de DEPENDENCIA"
+                            name="buscar">
+                        <span class="input-group-list">
+                            <i class="icon icon-search"></i>
+                            <button type="submit" class="btn btn-success">Buscar</button>
+
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br>
+
+<table class="table table-bordered table-hover table-striped border-primary">
+    <thead class="table-dark">
+        <tr class="tex">
+            <td>No.</td>
+            <td>DEPENDENCIA</td>
+            <td>UNIDAD</td>
+            <td>TELEFONO</td>
+            <td>CELULAR</td>
+            <td>EMAIL</td>
+            <td>DIRECCION</td>
+            <td>MUNICIPIO</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% if object_list %}
+        {% for ListadoDependencia in object_list %}
+        <tr>
+            <td>{{ListadoDependencia.id}}</td>
+            <td>{{ListadoDependencia.dependencia}}</td>
+            <td>{{ListadoDependencia.unidad}}</td>
+            <td>{{ListadoDependencia.telefono}}</td>
+            <td>{{ListadoDependencia.celular}}</td>
+            <td>{{ListadoDependencia.email}}</td>
+            <td>{{ListadoDependencia.direccion}}</td>
+            <td>{{ListadoDependencia.municipio}}</td>
+
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros en la base </h1>
+
+        {% endif%}
+    </tbody>
+
+</table>
+
+
+{% endblock %}

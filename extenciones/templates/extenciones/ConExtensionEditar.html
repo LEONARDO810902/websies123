@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+
+{% block title %}LISTADO {% endblock %}
+{% block content %}
+
+´<style>
+    .trheader {
+        text-align: center;
+    }
+</style>
+´
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped border-primary table-condensed">
+        <thead class="table-dark">
+            <tr class="tex trheader">
+                <td>No.</td>
+                <td>GRADO</td>
+                <td>CEDULA</td>
+                <td>APELLIDOS</td>
+                <td>NOMBRE</td>
+                <td>SIGLA</td>
+                <td>EXTENSION</td>
+                <td>ESTADO</td>
+                <td>ACCIONES</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if object_list %}
+            {% for DirExtencion in object_list %}
+            <tr>
+                <td>{{DirExtencion.id}}</td>
+                <td>{{DirExtencion.grado}}</td>
+                <td>{{DirExtencion.cedula}}</td>
+                <td>{{DirExtencion.apellidos}}</td>
+                <td>{{DirExtencion.nombre}}</td>
+                <td>{{DirExtencion.sigla}}</td>
+                <td>{{DirExtencion.extension}}</td>
+                <td>{{DirExtencion.estado}}</td>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="{% url 'ext_editar' DirExtencion.id %}">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="">Eleminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1>No hay registros en la base </h1>
+
+            {% endif%}
+        </tbody>
+
+    </table>
+</div>
+
+
+{% endblock %}
